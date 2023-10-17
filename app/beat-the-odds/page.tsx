@@ -39,7 +39,7 @@ const getData = async (): Promise<IColumn[]> => {
       low: highLowLines.low,
       playerName: prop.playerName,
       position: prop.position,
-      statType: statTypeLabels[prop.statType],
+      statType: prop.statType,
       team: `${prop.teamNickname} (${prop.teamAbbr})`,
     };
   });
@@ -52,7 +52,10 @@ export default async function BeatTheOddsPage() {
 
   return (
     <div className={"container mx-auto py-10"}>
-      <h1 className={"text-6xl mb-8"}>Beat the Odds</h1>
+      <h1 className={"text-6xl mb-4"}>Beat the Odds</h1>
+      <p className={"text-2xl mb-8"}>
+        Betting on your favorite nba players just got a whole lot easier.
+      </p>
       <DataTable columns={columns} data={data} />
     </div>
   );

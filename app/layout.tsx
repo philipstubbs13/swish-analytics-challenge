@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { ThemeProvider } from "@/components/theme-provider/ThemeProvider";
 import { ModeToggle } from "@/components/mode-toggle/ModeToggle";
 import { PropsWithChildren } from "react";
+import { Toaster } from "@/components/ui/toaster";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout(props: PropsWithChildren) {
           </div>
           {props.children}
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );
