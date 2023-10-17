@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={"w-screen h-screen flex justify-center items-center"}>
-      <div className={"w-full max-w-[600px] mx-auto"}>
+    <div
+      className={
+        "w-screen h-screen flex justify-center items-center container mx-auto"
+      }
+    >
+      <div className={"w-full max-w-[600px]"}>
         <h1 className={"text-6xl mb-4"}>Beat the Odds</h1>
         <p className={"text-2xl mb-4"}>
           Betting on your favorite nba players just got a whole lot easier.

@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider/ThemeProvider";
 import { ModeToggle } from "@/components/mode-toggle/ModeToggle";
 import { PropsWithChildren } from "react";
 import { Toaster } from "@/components/ui/toaster";
+import { NavigationMenu } from "@/components/navigation-menu/NavigationMenu";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -33,9 +34,7 @@ export default function RootLayout(props: PropsWithChildren) {
           disableTransitionOnChange={true}
           enableSystem={true}
         >
-          <div className={"p-6 pb-0"}>
-            <ModeToggle />
-          </div>
+          <NavigationMenu />
           {props.children}
         </ThemeProvider>
         <Toaster />
