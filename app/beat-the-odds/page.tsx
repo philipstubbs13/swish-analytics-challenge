@@ -1,9 +1,9 @@
-import { columns, IColumn } from "./columns";
-import { DataTable } from "../../components/data-table/DataTable";
+import { columns, IColumn } from "@/components/data-table/columns";
+import { DataTable } from "@/components/data-table/DataTable";
 import { headers } from "next/headers";
 import { IPlayerPropsResponse } from "@/types/playerProps.types";
 import { statTypeLabels } from "@/constants/playerProps.constants";
-import { isMarketSuspended } from "@/lib/utils";
+import { getLowAndHighLinesInAlternates, isMarketSuspended } from "@/lib/utils";
 import { IPlayerAlternatesResponse } from "@/types/playerAlternates.types";
 
 const getData = async (): Promise<IColumn[]> => {
@@ -25,27 +25,34 @@ const getData = async (): Promise<IColumn[]> => {
   const playerPropsResponse: IPlayerPropsResponse = await propsResponse.json();
   const playerAlternatesResponse: IPlayerAlternatesResponse =
     await alternatesResponse.json();
-  const props = playerPropsResponse.data;
-  const alternates = playerAlternatesResponse.data;
+  const propsData = playerPropsResponse.data;
+  const alternatesData = playerAlternatesResponse.data;
 
-  const tableData = props.map((prop) => ({
-    id: prop.playerId,
-    isMarketSuspended: isMarketSuspended(prop, alternates) ? "Yes" : "No",
-    line: prop.line,
-    playerName: prop.playerName,
-    position: prop.position,
-    statType: statTypeLabels[prop.statType],
-    team: `${prop.teamNickname} (${prop.teamAbbr})`,
-  }));
+  const tableData = propsData.map((prop) => {
+    const highLowLines = getLowAndHighLinesInAlternates(prop, alternatesData);
+
+    return {
+      high: highLowLines.high,
+      id: prop.playerId,
+      isMarketSuspended: isMarketSuspended(prop, alternatesData) ? "Yes" : "No",
+      line: prop.line,
+      low: highLowLines.low,
+      playerName: prop.playerName,
+      position: prop.position,
+      statType: statTypeLabels[prop.statType],
+      team: `${prop.teamNickname} (${prop.teamAbbr})`,
+    };
+  });
 
   return tableData;
 };
 
-export default async function BeatTheOdds() {
+export default async function BeatTheOddsPage() {
   const data = await getData();
 
   return (
     <div className={"container mx-auto py-10"}>
+      <h1 className={"text-6xl mb-8"}>Beat the Odds</h1>
       <DataTable columns={columns} data={data} />
     </div>
   );

@@ -38,13 +38,18 @@ export const DataTableColumnHeader = <TData, TValue>(
             className={"-ml-3 h-8 data-[state=open]:bg-accent"}
           >
             <span>{props.title}</span>
-            {props.column.getIsSorted() === "desc" ? (
+            {props.column.getIsSorted() === "desc" && (
               <ArrowDownIcon className="ml-2 h-4 w-4" />
-            ) : props.column.getIsSorted() === "asc" ? (
-              <ArrowUpIcon className="ml-2 h-4 w-4" />
-            ) : (
-              <CaretSortIcon className="ml-2 h-4 w-4" />
             )}
+
+            {props.column.getIsSorted() === "asc" && (
+              <ArrowUpIcon className="ml-2 h-4 w-4" />
+            )}
+
+            {props.column.getIsSorted() !== "desc" &&
+              props.column.getIsSorted() !== "asc" && (
+                <CaretSortIcon className="ml-2 h-4 w-4" />
+              )}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align={"start"}>

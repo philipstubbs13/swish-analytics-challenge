@@ -31,17 +31,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { ChangeEvent, useCallback, useState } from "react";
+import { useState } from "react";
 import { DataTablePagination } from "@/components/data-table/data-table-pagination/DataTablePagination";
 import { DataTableViewOptions } from "@/components/data-table/data-table-view-options/DataTableViewOptions";
 import {
-  MarketSuspensionStatus,
-  marketSuspensionStatusFilterOptions,
-  Position,
   positionFilterOptions,
-  positionLabels,
   statTypeFilterOptions,
 } from "@/constants/playerProps.constants";
+import { ColumnName } from "@/components/data-table/columns";
+import { DataTableFilterSelect } from "@/components/data-table/data-table-filter-select/DataTableFilterSelect";
 
 interface IProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -83,55 +81,51 @@ export const DataTable = <TData, TValue>(props: IProps<TData, TValue>) => {
             className={"max-w-sm"}
           />
           <div className="ml-auto flex items-center gap-x-4">
+            <DataTableFilterSelect
+              columnName={ColumnName.Position}
+              label={"position"}
+              options={positionFilterOptions}
+              table={table}
+            />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="hidden lg:flex">
-                  Filter by position
+                <Button
+                  variant={"outline"}
+                  size={"sm"}
+                  className={"hidden lg:flex"}
+                >
+                  Filter by stat
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-[160px] p-2">
-                <DropdownMenuLabel>Select a position</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                {positionFilterOptions.map((position) => (
-                  <DropdownMenuCheckboxItem
-                    key={position.value}
-                    className="capitalize"
-                    checked={
-                      table.getColumn("position")?.getFilterValue() ===
-                      position.value
-                    }
-                    onCheckedChange={(value) => {
-                      table
-                        .getColumn("position")
-                        ?.setFilterValue(position.value);
-                    }}
-                  >
-                    {position.label}
-                  </DropdownMenuCheckboxItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="hidden lg:flex">
-                  Filter by stat type
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[160px] p-2">
-                <DropdownMenuLabel>Select a stat type</DropdownMenuLabel>
-                <DropdownMenuSeparator />
+                <DropdownMenuCheckboxItem
+                  className={"cursor-pointer"}
+                  onCheckedChange={() => {
+                    table
+                      .getColumn(ColumnName.StatType)
+                      ?.setFilterValue(undefined);
+                  }}
+                >
+                  All
+                </DropdownMenuCheckboxItem>
                 {statTypeFilterOptions.map((statType) => (
                   <DropdownMenuCheckboxItem
                     key={statType.value}
                     className="capitalize"
                     checked={
-                      table.getColumn("statType")?.getFilterValue() ===
+                      table.getColumn(ColumnName.StatType)?.getFilterValue() ===
                       statType.value
                     }
                     onCheckedChange={(value) => {
-                      table
-                        .getColumn("statType")
-                        ?.setFilterValue(statType.value);
+                      if (!value) {
+                        table
+                          .getColumn(ColumnName.StatType)
+                          ?.setFilterValue(undefined);
+                      } else {
+                        table
+                          .getColumn(ColumnName.StatType)
+                          ?.setFilterValue(statType.value);
+                      }
                     }}
                   >
                     {statType.label}
@@ -146,16 +140,33 @@ export const DataTable = <TData, TValue>(props: IProps<TData, TValue>) => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-[160px] p-2">
-                <DropdownMenuLabel>Select a status</DropdownMenuLabel>
-                <DropdownMenuSeparator />
+                <DropdownMenuCheckboxItem
+                  className={"cursor-pointer"}
+                  onCheckedChange={() => {
+                    table
+                      .getColumn(ColumnName.IsMarketSuspended)
+                      ?.setFilterValue(undefined);
+                  }}
+                >
+                  All
+                </DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem
                   className="capitalize"
                   checked={
-                    table.getColumn("isMarketSuspended")?.getFilterValue() ===
-                    "No"
+                    table
+                      .getColumn(ColumnName.IsMarketSuspended)
+                      ?.getFilterValue() === "No"
                   }
                   onCheckedChange={(value) => {
-                    table.getColumn("isMarketSuspended")?.setFilterValue("No");
+                    if (!value) {
+                      table
+                        .getColumn(ColumnName.IsMarketSuspended)
+                        ?.setFilterValue(undefined);
+                    } else {
+                      table
+                        .getColumn(ColumnName.IsMarketSuspended)
+                        ?.setFilterValue("No");
+                    }
                   }}
                 >
                   Not Suspended
@@ -163,11 +174,20 @@ export const DataTable = <TData, TValue>(props: IProps<TData, TValue>) => {
                 <DropdownMenuCheckboxItem
                   className="capitalize"
                   checked={
-                    table.getColumn("isMarketSuspended")?.getFilterValue() ===
-                    "Yes"
+                    table
+                      .getColumn(ColumnName.IsMarketSuspended)
+                      ?.getFilterValue() === "Yes"
                   }
                   onCheckedChange={(value) => {
-                    table.getColumn("isMarketSuspended")?.setFilterValue("Yes");
+                    if (!value) {
+                      table
+                        .getColumn(ColumnName.IsMarketSuspended)
+                        ?.setFilterValue(undefined);
+                    } else {
+                      table
+                        .getColumn(ColumnName.IsMarketSuspended)
+                        ?.setFilterValue("Yes");
+                    }
                   }}
                 >
                   Suspended

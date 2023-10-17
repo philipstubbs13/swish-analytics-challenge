@@ -16,3 +16,8 @@ export interface IPlayerProps {
 export type IPlayerPropsResponse = {
   data: IPlayerProps[];
 };
+
+export interface IHighLowLine {
+  high: number;
+  low: number;
+}

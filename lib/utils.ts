@@ -1,6 +1,6 @@
 import { MarketSuspensionStatus } from "@/constants/playerProps.constants";
 import { IPlayerAlternates } from "@/types/playerAlternates.types";
-import { IPlayerProps } from "@/types/playerProps.types";
+import { IHighLowLine, IPlayerProps } from "@/types/playerProps.types";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -13,7 +13,7 @@ export const isMarketSuspended = (
   alternates: IPlayerAlternates[]
 ): boolean => {
   const { line, marketSuspended, playerId, statType, playerName } = playerProps;
-  const marketOptimalLineExistsInAlternates = findMarketOptimalLineInAlternates(
+  const marketOptimalLineExistsInAlternates = getMarketOptimalLineInAlternates(
     playerProps,
     alternates
   );
@@ -34,7 +34,7 @@ export const isMarketSuspended = (
   );
 };
 
-export const findMarketOptimalLineInAlternates = (
+export const getMarketOptimalLineInAlternates = (
   props: IPlayerProps,
   alternates: IPlayerAlternates[]
 ): IPlayerAlternates | undefined => {
@@ -44,4 +44,31 @@ export const findMarketOptimalLineInAlternates = (
       alternate.playerId === props.playerId &&
       alternate.statType === props.statType
   );
+};
+
+export const getLowAndHighLinesInAlternates = (
+  props: IPlayerProps,
+  alternates: IPlayerAlternates[]
+): IHighLowLine => {
+  const result = alternates.reduce(
+    (acc, alternate) => {
+      if (
+        alternate.playerId === props.playerId &&
+        alternate.statType === props.statType
+      ) {
+        if (alternate.line > acc.high) {
+          acc.high = alternate.line;
+        }
+
+        if (alternate.line < acc.low) {
+          acc.low = alternate.line;
+        }
+      }
+
+      return acc;
+    },
+    { high: -Infinity, low: Infinity }
+  );
+
+  return result;
 };

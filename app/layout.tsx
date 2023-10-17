@@ -32,7 +32,7 @@ export default function RootLayout(props: PropsWithChildren) {
           disableTransitionOnChange={true}
           enableSystem={true}
         >
-          <div className={"p-6"}>
+          <div className={"p-6 pb-0"}>
             <ModeToggle />
           </div>
           {props.children}

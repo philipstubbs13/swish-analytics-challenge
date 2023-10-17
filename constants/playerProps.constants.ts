@@ -1,3 +1,5 @@
+import { IValueLabelOption } from "@/components/data-table/data-table-filter-select/DataTableFilterSelect.types";
+
 export enum StatType {
   Assists = "assists",
   Points = "points",
@@ -12,20 +14,11 @@ export const statTypeLabels: Record<StatType, string> = {
   [StatType.Steals]: "Steals",
 };
 
-export const statTypeFilterOptions = [
+export const statTypeFilterOptions: IValueLabelOption<StatType>[] = [
   { label: statTypeLabels[StatType.Assists], value: StatType.Assists },
-  {
-    label: statTypeLabels[StatType.Points],
-    value: StatType.Points,
-  },
-  {
-    label: statTypeLabels[StatType.Rebounds],
-    value: StatType.Rebounds,
-  },
-  {
-    label: statTypeLabels[StatType.Steals],
-    value: StatType.Steals,
-  },
+  { label: statTypeLabels[StatType.Points], value: StatType.Points },
+  { label: statTypeLabels[StatType.Rebounds], value: StatType.Rebounds },
+  { label: statTypeLabels[StatType.Steals], value: StatType.Steals },
 ];
 
 export enum Position {
@@ -44,7 +37,7 @@ export const positionLabels: Record<Position, string> = {
   [Position.Center]: "Center",
 };
 
-export const positionFilterOptions = [
+export const positionFilterOptions: IValueLabelOption<Position>[] = [
   { label: positionLabels[Position.PointGuard], value: Position.PointGuard },
   {
     label: positionLabels[Position.ShootingGuard],
@@ -74,13 +67,14 @@ export const marketSuspensionStatusLabels: Record<
   [MarketSuspensionStatus.Suspended]: "Suspended",
 };
 
-export const marketSuspensionStatusFilterOptions = [
-  {
-    label: marketSuspensionStatusLabels[MarketSuspensionStatus.NotSuspended],
-    value: MarketSuspensionStatus.NotSuspended,
-  },
-  {
-    label: marketSuspensionStatusLabels[MarketSuspensionStatus.Suspended],
-    value: MarketSuspensionStatus.Suspended,
-  },
-];
+export const marketSuspensionStatusFilterOptions: IValueLabelOption<MarketSuspensionStatus>[] =
+  [
+    {
+      label: marketSuspensionStatusLabels[MarketSuspensionStatus.NotSuspended],
+      value: MarketSuspensionStatus.NotSuspended,
+    },
+    {
+      label: marketSuspensionStatusLabels[MarketSuspensionStatus.Suspended],
+      value: MarketSuspensionStatus.Suspended,
+    },
+  ];
