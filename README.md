@@ -52,7 +52,7 @@ There are 2 main datasets:
 
   <ul>
     <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://react.dev/">React.js</a></li>
     <li><a href="https://ui.shadcn.com/">shadcn/ui</a></li>
     <li><a href="https://tanstack.com/table/v8">TanStack Table</a></li>
     <li><a href="https://nextjs.org/">Next.js</a></li>
@@ -60,7 +60,7 @@ There are 2 main datasets:
 
 ### <a name="features"></a>Features
 
-- Visualize player market data represented as a table.
+- Visualize player market data represented as a table. Each row of the table represents a market. For each market, included is the low and high lines for that market from the alternates dataset. For example, for Westbrook’s points, there are columnss for his low (18.5) and high (20.5).
 - Filter data by position, stat type, and or market status (suspended or not).
 - A search bar that filters on player name or team name.
 - An indication of whether a market is suspended or not.
