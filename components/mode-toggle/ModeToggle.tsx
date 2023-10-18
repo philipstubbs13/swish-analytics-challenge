@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { modeOptions } from "./ModeToggle.constants";
 
 export const ModeToggle = () => {
   const { setTheme } = useTheme();
@@ -33,15 +34,14 @@ export const ModeToggle = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align={"end"}>
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
+        {modeOptions.map((option) => (
+          <DropdownMenuItem
+            key={option.value}
+            onClick={() => setTheme(option.value)}
+          >
+            {option.label}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

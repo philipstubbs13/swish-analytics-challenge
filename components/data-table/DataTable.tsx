@@ -26,8 +26,6 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
@@ -73,14 +71,24 @@ export const DataTable = <TData, TValue>(props: IProps<TData, TValue>) => {
 
   return (
     <>
+      <Input
+        placeholder={"Search by player or team"}
+        onChange={(event) => table.setGlobalFilter(event.target.value)}
+        className={"max-w-md mb-4"}
+      />
       <div className={"rounded-md border"}>
         <div className={"flex items-center py-4 px-2"}>
-          <Input
-            placeholder={"Search by player or team"}
-            onChange={(event) => table.setGlobalFilter(event.target.value)}
-            className={"max-w-sm"}
-          />
           <div className="ml-auto flex items-center gap-x-4">
+            {Boolean(columnFilters.length) && (
+              <Button
+                variant={"outline"}
+                size={"sm"}
+                className={"hidden lg:flex"}
+                onClick={() => setColumnFilters([])}
+              >
+                Clear all filters
+              </Button>
+            )}
             <DataTableFilterSelect
               columnName={ColumnName.Position}
               label={"position"}

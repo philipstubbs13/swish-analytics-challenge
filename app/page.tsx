@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Routes } from "@/constants/router.constants";
 
 export default function HomePage() {
   return (
@@ -14,9 +15,9 @@ export default function HomePage() {
           Betting on your favorite nba players just got a whole lot easier.
         </p>
         <div>
-          <Link href={"/beat-the-odds"}>
+          <Link href={Routes.Data}>
             <Button className={"px-4 py-2 rounded-lg text-xl"}>
-              Beat the odds
+              Get Started
             </Button>
           </Link>
         </div>

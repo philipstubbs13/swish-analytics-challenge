@@ -6,11 +6,11 @@
   </p>
    
 <h4>
-    <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/beat-the-odds">View Wep App</a>
+    <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/data">View Wep App</a>
   <span> · </span>
-    <a href="#">API Documentation</a>
+    <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/api">API Documentation</a>
   <span> · </span> 
-  <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/beat-the-odds">About</a>
+  <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/about">About</a>
   <span> · </span>
     <a href="https://github.com/philipstubbs13/swish-analytics-challenge/issues">Report Issue</a>
   <span> · </span>
@@ -44,10 +44,6 @@ There are 2 main datasets:
 - **alternates** - this represents all of the lines offered at one point for a market, and their respective under, over, and push probabilities. For example, for Russell Westbrook’s points market, there were 5 different lines - 18.5, 19.0,
   19.5, 20, and 20.5
 
-<div align="center"> 
-  <!-- <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" /> -->
-</div>
-
 ### <a name="tech-stack"></a>Tech Stack
 
   <ul>
@@ -64,6 +60,13 @@ There are 2 main datasets:
 - Filter data by position, stat type, and or market status (suspended or not).
 - A search bar that filters on player name or team name.
 - An indication of whether a market is suspended or not.
+
+  A market is suspended if any of these 3 cases are true
+
+  1. marketSuspended = 1 for that market in the props dataset.
+  2. That market’s optimal line does not exist in the alternates dataset. For example, Jordan Poole points.
+  3. That market exists in the alternates dataset, but none of the 3 probabilities for the optimal line are greater than 40%. For example, Steph Curry steals. His optimal line is 1, but the under, push, and over probs are each under .4
+
 - Manually suspend or release.
 
 ### <a name="api"></a> About the API

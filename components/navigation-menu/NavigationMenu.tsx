@@ -10,30 +10,37 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { ModeToggle } from "../mode-toggle/ModeToggle";
+import { Routes } from "@/constants/router.constants";
 
 export const NavigationMenu = () => {
   return (
     <UiNavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem className="pr-1 md:pr-6">
-          <Link href="/" legacyBehavior passHref>
+          <Link href={Routes.Home} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Home
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="pr-1 md:pr-6">
-          <Link href="/beat-the-odds" legacyBehavior passHref>
+          <Link href={Routes.Data} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Beat the Odds
+              Data
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="pr-1 md:pr-6">
-          <Link href="/about" legacyBehavior passHref>
+          <Link href={Routes.About} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem className="pr-1 md:pr-6">
+          <Link href={Routes.ApiDocumentation} legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              API
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

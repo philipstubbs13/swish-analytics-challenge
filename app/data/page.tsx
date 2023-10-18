@@ -49,7 +49,7 @@ const getData = async (): Promise<IColumn[]> => {
   return tableData;
 };
 
-export default async function BeatTheOddsPage() {
+export default async function DataPage() {
   const data = await getData();
 
   return (
