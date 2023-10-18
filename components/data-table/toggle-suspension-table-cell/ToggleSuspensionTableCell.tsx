@@ -1,15 +1,8 @@
-import React from "react";
-import { Button } from "../../ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../../ui/dropdown-menu";
+import React, { useState } from "react";
 import { useToast } from "../../ui/use-toast";
-import { MoreHorizontal } from "lucide-react";
 import { Row } from "@tanstack/react-table";
 import { IColumn } from "../columns";
+import { Checkbox } from "../../ui/checkbox";
 
 interface IProps {
   row: Row<IColumn>;
@@ -18,42 +11,30 @@ interface IProps {
 export const ToggleSuspensionTableCell = (props: IProps) => {
   const market = props.row.original;
   const isMarketSuspended = market.isMarketSuspended === "Yes";
+  const [isSuspended, setIsSuspended] = useState<boolean>(isMarketSuspended);
   const { toast } = useToast();
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-8 w-8 p-0">
-          <span className="sr-only">Open menu</span>
-          <MoreHorizontal className="h-4 w-4" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        {isMarketSuspended && (
-          <DropdownMenuItem
-            onClick={() => {
-              toast({
-                title: "Suspension released for:",
-                description: `${market.playerName} ${market.statType}`,
-              });
-            }}
-          >
-            Release suspension
-          </DropdownMenuItem>
-        )}
-        {!isMarketSuspended && (
-          <DropdownMenuItem
-            onClick={() => {
-              toast({
-                title: "Market suspended for:",
-                description: `${market.playerName} ${market.statType}`,
-              });
-            }}
-          >
-            Suspend
-          </DropdownMenuItem>
-        )}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div>
+      <Checkbox
+        checked={isSuspended}
+        onCheckedChange={(value: boolean) => {
+          if (value) {
+            setIsSuspended(true);
+            toast({
+              title: "Market suspended for:",
+              description: `${market.playerName} ${market.statType}`,
+            });
+          } else {
+            setIsSuspended(false);
+            toast({
+              title: "Suspension released for:",
+              description: `${market.playerName} ${market.statType}`,
+            });
+          }
+        }}
+        aria-label="Select row"
+      />
+    </div>
   );
 };

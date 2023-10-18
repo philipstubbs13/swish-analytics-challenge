@@ -49,6 +49,7 @@ export const DataTable = <TData, TValue>(props: IProps<TData, TValue>) => {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [globalFilter, setGlobalFilter] = useState<string>("");
+  const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
     data: props.data || [],
@@ -61,11 +62,13 @@ export const DataTable = <TData, TValue>(props: IProps<TData, TValue>) => {
     onColumnVisibilityChange: setColumnVisibility,
     getPaginationRowModel: getPaginationRowModel(),
     onGlobalFilterChange: setGlobalFilter,
+    onRowSelectionChange: setRowSelection,
     state: {
       columnFilters,
       globalFilter,
       sorting,
       columnVisibility,
+      rowSelection,
     },
   });
 
