@@ -56,12 +56,12 @@ There are 2 main datasets:
 
 ### <a name="features"></a>Features
 
-- Visualize player market data represented as a table. Each row of the table represents a market. For each market, included is the low and high lines for that market from the alternates dataset. For example, for Westbrook’s points, there are columnss for his low (18.5) and high (20.5).
+- Visualize player market data represented as a table. Each row of the table represents a market. For each market, included is the low and high lines for that market from the alternates dataset. For example, for Westbrook’s points, there are columns for his low (18.5) and high (20.5).
 - Filter data by position, stat type, and or market status (suspended or not).
 - A search bar that filters on player name or team name.
 - An indication of whether a market is suspended or not.
 
-  A market is suspended if any of these 3 cases are true
+  A market is suspended if any of these 3 cases are true.
 
   1. marketSuspended = 1 for that market in the props dataset.
   2. That market’s optimal line does not exist in the alternates dataset. For example, Jordan Poole points.
@@ -129,7 +129,7 @@ Feedback and contributions are very much appreciated and always welcome!
 
 Phil Stubbs - philipstubbs13@gmail.com
 
-Project Link: [https://swish-analytics-challenge.vercel.app/beat-the-odds](https://swish-analytics-challenge.vercel.app/beat-the-odds)
+Project Link: [https://swish-analytics-challenge.vercel.app/data](https://swish-analytics-challenge.vercel.app/data)
 
 ## <a name="issues-and-requests"></a>Issues and Requests
 
