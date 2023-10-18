@@ -27,6 +27,7 @@
   - [Features](#features)
   - [About the API](#api)
 - [Getting Started](#getting-started)
+- [Running Tests](#running-tests)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
 - [Contact](#contact)
@@ -52,6 +53,7 @@ There are 2 main datasets:
     <li><a href="https://ui.shadcn.com/">shadcn/ui</a></li>
     <li><a href="https://tanstack.com/table/v8">TanStack Table</a></li>
     <li><a href="https://nextjs.org/">Next.js</a></li>
+    <li><a href="https://vitest.dev/">Vitest (unit testing framework)</a></li>
   </ul>
 
 ### <a name="features"></a>Features
@@ -115,6 +117,20 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+## <a name="running-tests"></a>Running Tests
+
+This project uses [vitest](https://vitest.dev/) for unit tests. To run the unit tests for this project, run the following command in the root directory of this project.
+
+```bash
+  npm run test
+```
+
+To generate a test coverage report, run the following command:
+
+```bash
+npm run coverage
+```
 
 ### <a name="deployment"></a>Deployment
 

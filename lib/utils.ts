@@ -1,6 +1,6 @@
-import { MarketSuspensionStatus } from "@/constants/playerProps.constants";
-import { IPlayerAlternates } from "@/types/playerAlternates.types";
-import { IHighLowLine, IPlayerProps } from "@/types/playerProps.types";
+import { MarketSuspensionStatus } from "../constants/playerProps.constants";
+import { IPlayerAlternates } from "../types/playerAlternates.types";
+import { IHighLowLine, IPlayerProps } from "../types/playerProps.types";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -17,6 +17,7 @@ export const isMarketSuspended = (
     playerProps,
     alternates
   );
+
   const marketOptimalLineIsLessThan40 = alternates.find(
     (alternate) =>
       alternate.line === line &&
@@ -70,5 +71,8 @@ export const findLowAndHighLinesInAlternates = (
     { high: -Infinity, low: Infinity }
   );
 
-  return result;
+  const highLine = result.high === -Infinity ? 0 : result.high;
+  const lowLine = result.low === Infinity ? 0 : result.low;
+
+  return { high: highLine, low: lowLine };
 };
