@@ -31,6 +31,13 @@ export const NavigationMenu = () => {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="pr-6">
+          <Link href="/about" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              About
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem className="pr-6">
           <ModeToggle />
         </NavigationMenuItem>
       </NavigationMenuList>

@@ -10,7 +10,7 @@
   <span> · </span>
     <a href="#">API Documentation</a>
   <span> · </span> 
-  <a href="#">About</a>
+  <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/beat-the-odds">About</a>
   <span> · </span>
     <a href="https://github.com/philipstubbs13/swish-analytics-challenge/issues">Report Issue</a>
   <span> · </span>
