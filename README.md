@@ -6,11 +6,11 @@
   </p>
    
 <h4>
-    <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/data">View Wep App</a>
+    <a href="https://swish-analytics-challenge.vercel.app/data">View Wep App</a>
   <span> · </span>
-    <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/api">API Documentation</a>
+    <a href="https://swish-analytics-challenge.vercel.app/api">API Documentation</a>
   <span> · </span> 
-  <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/about">About</a>
+  <a href="https://swish-analytics-challenge.vercel.app/about">About</a>
   <span> · </span>
     <a href="https://github.com/philipstubbs13/swish-analytics-challenge/issues">Report Issue</a>
   <span> · </span>
@@ -75,9 +75,9 @@ The data for this project is available for use through an API built using Next.j
 
 To see the data used for this project, take a look at the following endpoints:
 
-- <https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/api/props>
+- <https://swish-analytics-challenge.vercel.app/api/props>
 
-- <https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/api/alternates>
+- <https://swish-analytics-challenge.vercel.app/api/alternates>
 
 ## <a name="getting-started"></a>Getting Started
 
@@ -129,7 +129,7 @@ Feedback and contributions are very much appreciated and always welcome!
 
 Phil Stubbs - philipstubbs13@gmail.com
 
-Project Link: [https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/beat-the-odds](https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/beat-the-odds)
+Project Link: [https://swish-analytics-challenge.vercel.app/beat-the-odds](https://swish-analytics-challenge.vercel.app/beat-the-odds)
 
 ## <a name="issues-and-requests"></a>Issues and Requests
 
