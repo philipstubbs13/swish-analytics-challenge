@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Routes } from "@/constants/router.constants";
+import { Button } from "../components/ui/button";
+import { Routes } from "../constants/router.constants";
 
 export default function HomePage() {
   return (
