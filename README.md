@@ -1,17 +1,105 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <h1>Beat the Odds</h1>
+  
+  <p>
+    Beat the Odds is a web app that was created specifically to help the average basketball fan quickly and effectively visualize and organize complex market data for their favorite nba players and teams. With this app, I hope to make sports betting easy, fun, and enjoyable once again. If you have any ideas or suggestions on how to make that happen, let's chat.
+  </p>
+   
+<h4>
+    <a href="https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/beat-the-odds">View Wep App</a>
+  <span> · </span>
+    <a href="#">API Documentation</a>
+  <span> · </span> 
+  <a href="#">About</a>
+  <span> · </span>
+    <a href="https://github.com/philipstubbs13/swish-analytics-challenge/issues">Report Issue</a>
+  <span> · </span>
+    <a href="https://github.com/philipstubbs13/swish-analytics-challenge/issues">Request Feature</a>
+  </h4>
+</div>
 
-## Getting Started
+<br />
 
-First, run the development server:
+# Table of Contents
+
+- [About the Project](#about-the-project)
+  - [Tech Stack](#tech-stack)
+  - [Features](#features)
+  - [About the API](#api)
+- [Getting Started](#getting-started)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [Contact](#contact)
+- [Issues And Requests](#issues-and-requests)
+
+## <a name="about-the-project"></a>About the Project
+
+A web app that takes complex, technical market data (in json format) for nba players and transforms that data in a way so that the average basketball fan can visualize and understand.
+
+There are 2 main datasets:
+
+- **props** - this represents the optimal betting line being offered for each market, where a market is defined as the line for a specific stat type of a player. For example, for Russell Westbrook, his 4 unique markets and respective optimal lines are
+  points (19.0), rebounds (9.0), assists (8.5), and steals (1.5).
+
+- **alternates** - this represents all of the lines offered at one point for a market, and their respective under, over, and push probabilities. For example, for Russell Westbrook’s points market, there were 5 different lines - 18.5, 19.0,
+  19.5, 20, and 20.5
+
+<div align="center"> 
+  <!-- <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" /> -->
+</div>
+
+### <a name="tech-stack"></a>Tech Stack
+
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://ui.shadcn.com/">shadcn/ui</a></li>
+    <li><a href="https://tanstack.com/table/v8">TanStack Table</a></li>
+    <li><a href="https://nextjs.org/">Next.js</a></li>
+  </ul>
+
+### <a name="features"></a>Features
+
+- Visualize player market data represented as a table.
+- Filter data by position, stat type, and or market status (suspended or not).
+- A search bar that filters on player name or team name.
+- An indication of whether a market is suspended or not.
+- Manually suspend or release.
+
+### <a name="api"></a> About the API
+
+The data for this project is available for use through an API built using Next.js. Using Next.js routes, this API extracts player market data from the json datasets and then transforms the data into a usable source so that it can be loaded into a table that gets rendered using React server components.
+
+To see the data used for this project, take a look at the following endpoints:
+
+- <https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/api/props>
+
+- <https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/api/alternates>
+
+## <a name="getting-started"></a>Getting Started
+
+Clone the project.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/philipstubbs13/swish-analytics-challenge.git
+```
+
+Go to the project directory.
+
+```bash
+  cd swish-analytics-challenge
+```
+
+Install dependencies.
+
+```bash
+  npm install
+```
+
+Start the development server.
+
+```bash
+  npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -20,17 +108,26 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
-
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### <a name="deployment"></a>Deployment
 
-## Deploy on Vercel
+This app is deployed through the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+Deploys are set up to happen automatically when code is merged into the `main` branch.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## <a name="contributing"></a>Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feedback and contributions are very much appreciated and always welcome!
+
+## <a name="contact"></a>Contact
+
+Phil Stubbs - philipstubbs13@gmail.com
+
+Project Link: [https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/beat-the-odds](https://swish-analytics-challenge-8bhn9vpca-philipstubbs13.vercel.app/beat-the-odds)
+
+## <a name="issues-and-requests"></a>Issues and Requests
+
+If you find an issue while using the application or have a request, log the issue or request [here](https://github.com/philipstubbs13/swish-analytics-challenge/issues). These will be addressed in a future code update.
