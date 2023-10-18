@@ -7,8 +7,8 @@ export default function AboutPage() {
         average basketball fan quickly and effectively visualize and organize
         complex market data for their favorite nba players and teams. With this
         app, I hope to make sports betting easy, fun, and enjoyable once again.
-        If you have any ideas or suggestions on how to make that happen, let's
-        chat.
+        If you have any ideas or suggestions on how to make that happen,
+        let&apos;s chat.
       </p>
       <p className="mb-4">
         A web app that takes complex, technical market data (in json format) for

@@ -2,7 +2,10 @@ import { columns, IColumn } from "@/components/data-table/columns";
 import { DataTable } from "@/components/data-table/DataTable";
 import { headers } from "next/headers";
 import { IPlayerPropsResponse } from "@/types/playerProps.types";
-import { getLowAndHighLinesInAlternates, isMarketSuspended } from "@/lib/utils";
+import {
+  findLowAndHighLinesInAlternates,
+  isMarketSuspended,
+} from "@/lib/utils";
 import { IPlayerAlternatesResponse } from "@/types/playerAlternates.types";
 
 const getData = async (): Promise<IColumn[]> => {
@@ -28,7 +31,7 @@ const getData = async (): Promise<IColumn[]> => {
   const alternatesData = playerAlternatesResponse.data;
 
   const tableData = propsData.map((prop) => {
-    const highLowLines = getLowAndHighLinesInAlternates(prop, alternatesData);
+    const highLowLines = findLowAndHighLinesInAlternates(prop, alternatesData);
 
     return {
       high: highLowLines.high,

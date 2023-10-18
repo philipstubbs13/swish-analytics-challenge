@@ -12,8 +12,8 @@ export const isMarketSuspended = (
   playerProps: IPlayerProps,
   alternates: IPlayerAlternates[]
 ): boolean => {
-  const { line, marketSuspended, playerId, statType, playerName } = playerProps;
-  const marketOptimalLineExistsInAlternates = getMarketOptimalLineInAlternates(
+  const { line, marketSuspended, playerId, statType } = playerProps;
+  const marketOptimalLineExistsInAlternates = findMarketOptimalLineInAlternates(
     playerProps,
     alternates
   );
@@ -34,7 +34,7 @@ export const isMarketSuspended = (
   );
 };
 
-export const getMarketOptimalLineInAlternates = (
+export const findMarketOptimalLineInAlternates = (
   props: IPlayerProps,
   alternates: IPlayerAlternates[]
 ): IPlayerAlternates | undefined => {
@@ -46,7 +46,7 @@ export const getMarketOptimalLineInAlternates = (
   );
 };
 
-export const getLowAndHighLinesInAlternates = (
+export const findLowAndHighLinesInAlternates = (
   props: IPlayerProps,
   alternates: IPlayerAlternates[]
 ): IHighLowLine => {

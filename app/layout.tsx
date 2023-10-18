@@ -34,7 +34,12 @@ export default function RootLayout(props: PropsWithChildren) {
           disableTransitionOnChange={true}
           enableSystem={true}
         >
-          <NavigationMenu />
+          <div className={"flex items-center justify-between p-4"}>
+            <NavigationMenu />
+            <div>
+              <ModeToggle />
+            </div>
+          </div>
           {props.children}
         </ThemeProvider>
         <Toaster />
