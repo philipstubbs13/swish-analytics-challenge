@@ -79,11 +79,10 @@ export const columns: ColumnDef<IColumn>[] = [
   },
   {
     accessorKey: ColumnName.IsMarketSuspended,
+    enableGlobalFilter: false,
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title={"Is Market Suspended"} />
     ),
     cell: ({ row }) => <ToggleSuspensionTableCell row={row} />,
-    enableSorting: false,
-    enableHiding: false,
   },
 ];
