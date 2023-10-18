@@ -54,6 +54,7 @@ There are 2 main datasets:
     <li><a href="https://tanstack.com/table/v8">TanStack Table</a></li>
     <li><a href="https://nextjs.org/">Next.js</a></li>
     <li><a href="https://vitest.dev/">Vitest (unit testing framework)</a></li>
+    <li><a href="https://tailwindcss.com/">Tailwind</a></li>
   </ul>
 
 ### <a name="features"></a>Features

@@ -20,28 +20,28 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Input } from "@/components/ui/input";
+} from "../ui/table";
+import { Input } from "../ui/input";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+} from "../ui/dropdown-menu";
+import { Button } from "../ui/button";
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 import { useState } from "react";
-import { DataTablePagination } from "@/components/data-table/data-table-pagination/DataTablePagination";
-import { DataTableViewOptions } from "@/components/data-table/data-table-view-options/DataTableViewOptions";
+import { DataTablePagination } from "../data-table/data-table-pagination/DataTablePagination";
+import { DataTableViewOptions } from "../data-table/data-table-view-options/DataTableViewOptions";
 import {
   positionFilterOptions,
   statTypeFilterOptions,
-} from "@/constants/playerProps.constants";
-import { ColumnName } from "@/components/data-table/columns";
-import { DataTableFilterSelect } from "@/components/data-table/data-table-filter-select/DataTableFilterSelect";
+} from "../../constants/playerProps.constants";
+import { ColumnName } from "../data-table/columns";
+import { DataTableFilterSelect } from "../data-table/data-table-filter-select/DataTableFilterSelect";
 
 interface IProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
-  data: TData[];
+  data?: TData[];
 }
 
 export const DataTable = <TData, TValue>(props: IProps<TData, TValue>) => {
@@ -51,7 +51,7 @@ export const DataTable = <TData, TValue>(props: IProps<TData, TValue>) => {
   const [globalFilter, setGlobalFilter] = useState<string>("");
 
   const table = useReactTable({
-    data: props.data,
+    data: props.data || [],
     columns: props.columns,
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,

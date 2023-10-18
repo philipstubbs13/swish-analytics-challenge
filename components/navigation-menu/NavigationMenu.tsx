@@ -9,8 +9,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Routes } from "@/constants/router.constants";
+} from "../ui/navigation-menu";
+import { Routes } from "../../constants/router.constants";
 
 export const NavigationMenu = () => {
   return (

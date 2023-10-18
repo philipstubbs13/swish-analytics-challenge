@@ -3,14 +3,12 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
+} from "../../ui/dropdown-menu";
 import { Table } from "@tanstack/react-table";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../ui/button";
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { IValueLabelOption } from "@/components/data-table/data-table-filter-select/DataTableFilterSelect.types";
-import { ColumnName } from "@/components/data-table/columns";
+import { IValueLabelOption } from "../../data-table/data-table-filter-select/DataTableFilterSelect.types";
+import { ColumnName } from "../../data-table/columns";
 
 interface IProps<TData = any> {
   columnName: ColumnName;

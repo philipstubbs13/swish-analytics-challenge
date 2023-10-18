@@ -1,12 +1,12 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useToast } from "@/components/ui/use-toast";
+} from "../../ui/dropdown-menu";
+import { useToast } from "../../ui/use-toast";
 import { MoreHorizontal } from "lucide-react";
 import { Row } from "@tanstack/react-table";
 import { IColumn } from "../columns";

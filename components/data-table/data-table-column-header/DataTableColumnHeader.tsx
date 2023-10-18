@@ -5,15 +5,15 @@ import {
   EyeNoneIcon,
 } from "@radix-ui/react-icons";
 import { Column } from "@tanstack/react-table";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Button } from "../../../components/ui/button";
+import { cn } from "../../../lib/utils";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../../../components/ui/dropdown-menu";
 import { HTMLAttributes } from "react";
 
 interface IProps<TData, TValue> extends HTMLAttributes<HTMLDivElement> {
