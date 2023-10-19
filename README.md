@@ -1,6 +1,10 @@
 <div align="center">
   <h1>Beat the Odds</h1>
-  
+
+Project Link: [https://swish-analytics-challenge.vercel.app/data](https://swish-analytics-challenge.vercel.app/data)
+
+GitHub Repository: [https://github.com/philipstubbs13/swish-analytics-challenge](https://github.com/philipstubbs13/swish-analytics-challenge)
+
   <p>
     Beat the Odds is a web app that was created specifically to help the average basketball fan quickly and effectively visualize and organize complex market data for their favorite nba players and teams. With this app, I hope to make sports betting easy, fun, and enjoyable once again. If you have any ideas or suggestions on how to make that happen, let's chat.
   </p>
@@ -145,8 +149,6 @@ Feedback and contributions are very much appreciated and always welcome!
 ## <a name="contact"></a>Contact
 
 Phil Stubbs - philipstubbs13@gmail.com
-
-Project Link: [https://swish-analytics-challenge.vercel.app/data](https://swish-analytics-challenge.vercel.app/data)
 
 ## <a name="issues-and-requests"></a>Issues and Requests
 
