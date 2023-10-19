@@ -22,7 +22,11 @@ interface IProps<TData> {
 export function DataTablePagination<TData>(props: IProps<TData>) {
   return (
     <div className={"flex items-center justify-end px-2"}>
-      <div className={"flex items-center space-x-6 lg:space-x-8"}>
+      <div
+        className={
+          "flex flex-col md:flex-row gap-y-5 items-end md:items-center space-x-6 lg:space-x-8"
+        }
+      >
         <div className={"flex items-center space-x-2"}>
           <p className={"text-sm font-medium"}>Rows per page</p>
           <Select

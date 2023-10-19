@@ -1,7 +1,10 @@
+import { PageName } from "../../components/page-name/PageName";
+import { Container } from "../../components/container/Container";
+
 export default function ApiDocumentationPage() {
   return (
-    <div className={"container mx-auto py-10"}>
-      <h1 className={"text-6xl mb-4"}>About the API</h1>
+    <Container>
+      <PageName>About the API</PageName>
       <p className="mb-4">
         The data for this project is available for use through an API built
         using Next.js API routes. This API extracts player market data (in json
@@ -36,6 +39,6 @@ export default function ApiDocumentationPage() {
           </li>
         </ul>
       </div>
-    </div>
+    </Container>
   );
 }

@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useToast } from "../../ui/use-toast";
-import { Row } from "@tanstack/react-table";
-import { IColumn } from "../columns";
 import { Checkbox } from "../../ui/checkbox";
 import { StatType } from "../../../constants/playerProps.constants";
 

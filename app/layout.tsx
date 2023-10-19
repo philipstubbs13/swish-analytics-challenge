@@ -39,7 +39,11 @@ export default function RootLayout(props: PropsWithChildren) {
           <div className={"flex items-center justify-between p-4"}>
             <NavigationMenu />
             <div className={"flex items-center gap-4"}>
-              <Button variant={"outline"} size={"icon"}>
+              <Button
+                variant={"outline"}
+                size={"icon"}
+                className={"hidden md:block"}
+              >
                 <a
                   data-testid={"github-button"}
                   href={

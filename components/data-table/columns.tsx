@@ -3,7 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "./data-table-column-header/DataTableColumnHeader";
 import { Position, StatType } from "../../constants/playerProps.constants";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { ToggleSuspensionTableCell } from "./toggle-suspension-table-cell/ToggleSuspensionTableCell";
 
 export interface IColumn {

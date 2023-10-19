@@ -1,7 +1,10 @@
+import { PageName } from "../../components/page-name/PageName";
+import { Container } from "../../components/container/Container";
+
 export default function AboutPage() {
   return (
-    <div className={"container mx-auto py-10"}>
-      <h1 className={"text-6xl mb-4"}>About</h1>
+    <Container>
+      <PageName>About</PageName>
       <p className="mb-4">
         Beat the Odds is a web app that was created specifically to help the
         average basketball fan quickly and effectively visualize and organize
@@ -15,6 +18,6 @@ export default function AboutPage() {
         nba players and transforms that data in a way so that the average
         basketball fan can visualize and understand.
       </p>
-    </div>
+    </Container>
   );
 }
