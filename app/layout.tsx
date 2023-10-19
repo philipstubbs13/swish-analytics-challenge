@@ -42,7 +42,7 @@ export default function RootLayout(props: PropsWithChildren) {
               <Button
                 variant={"outline"}
                 size={"icon"}
-                className={"hidden md:block"}
+                className={"hidden md:flex"}
               >
                 <a
                   data-testid={"github-button"}
