@@ -83,6 +83,17 @@ export const columns: ColumnDef<IColumn>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title={"Is Market Suspended"} />
     ),
-    cell: ({ row }) => <ToggleSuspensionTableCell row={row} />,
+    cell: ({ row }) => {
+      const market = row.original;
+      const isMarketSuspended = market.isMarketSuspended === "Yes";
+
+      return (
+        <ToggleSuspensionTableCell
+          isMarketSuspended={isMarketSuspended}
+          playerName={market.playerName}
+          statType={market.statType}
+        />
+      );
+    },
   },
 ];

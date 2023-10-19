@@ -3,15 +3,18 @@ import { useToast } from "../../ui/use-toast";
 import { Row } from "@tanstack/react-table";
 import { IColumn } from "../columns";
 import { Checkbox } from "../../ui/checkbox";
+import { StatType } from "../../../constants/playerProps.constants";
 
 interface IProps {
-  row: Row<IColumn>;
+  isMarketSuspended: boolean;
+  playerName: string;
+  statType: StatType;
 }
 
 export const ToggleSuspensionTableCell = (props: IProps) => {
-  const market = props.row.original;
-  const isMarketSuspended = market.isMarketSuspended === "Yes";
-  const [isSuspended, setIsSuspended] = useState<boolean>(isMarketSuspended);
+  const [isSuspended, setIsSuspended] = useState<boolean>(
+    props.isMarketSuspended
+  );
   const { toast } = useToast();
 
   return (
@@ -23,13 +26,13 @@ export const ToggleSuspensionTableCell = (props: IProps) => {
             setIsSuspended(true);
             toast({
               title: "Market suspended for:",
-              description: `${market.playerName} ${market.statType}`,
+              description: `${props.playerName} ${props.statType}`,
             });
           } else {
             setIsSuspended(false);
             toast({
               title: "Suspension released for:",
-              description: `${market.playerName} ${market.statType}`,
+              description: `${props.playerName} ${props.statType}`,
             });
           }
         }}
