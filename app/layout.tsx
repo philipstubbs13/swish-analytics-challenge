@@ -7,6 +7,8 @@ import { ModeToggle } from "@/components/mode-toggle/ModeToggle";
 import { PropsWithChildren } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { NavigationMenu } from "@/components/navigation-menu/NavigationMenu";
+import { Github } from "lucide-react";
+import { Button } from "../components/ui/button";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -36,7 +38,18 @@ export default function RootLayout(props: PropsWithChildren) {
         >
           <div className={"flex items-center justify-between p-4"}>
             <NavigationMenu />
-            <div>
+            <div className={"flex items-center gap-4"}>
+              <Button variant={"outline"} size={"icon"}>
+                <a
+                  data-testid={"github-button"}
+                  href={
+                    "https://github.com/philipstubbs13/swish-analytics-challenge"
+                  }
+                  target={"_blank"}
+                >
+                  <Github />
+                </a>
+              </Button>
               <ModeToggle />
             </div>
           </div>
